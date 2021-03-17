@@ -20,10 +20,7 @@ import SignoutButton from "../components/Signout.vue";
 export default {
     name: 'FeedPage',
      components: {
-        // ProfileEdit,
-        // ProfileDelete,
         SignoutButton,
-        // FollowButton,
     },
     methods: {
         profile() {
