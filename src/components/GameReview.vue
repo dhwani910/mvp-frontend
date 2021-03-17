@@ -8,11 +8,11 @@
                 v-if="userId == review.userId"
                 :reviewId="review.reviewId">
             </review-edit>
-            <!-- <review-delete
-                v-if="(userId = review.userId)"
+            <review-delete
+                v-if="(userId == review.userId)"
                 :reviewId="review.reviewId">
 
-            </review-delete> -->
+            </review-delete>
         </div>
         <div>
             <textarea type="text" v-model="reviewContent" placeholder="What Do You Think About This Game??"></textarea>
@@ -35,12 +35,12 @@
 import axios from "axios";
 import cookies from "vue-cookies";
 import ReviewEdit from './ReviewEdit.vue';
-// import ReviewDelete from './ReviewDelete.vue';
+import ReviewDelete from './ReviewDelete.vue';
 export default {
     name: 'GameReview',
     components: { 
         ReviewEdit,
-        // ReviewDelete,
+        ReviewDelete,
     },
     props: {
         gameId: Number,

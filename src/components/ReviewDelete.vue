@@ -10,7 +10,7 @@
 import cookies from "vue-cookies";
 import axios from 'axios'
 export default {
-    name: 'reviewDelete',
+    name: 'ReviewDelete',
     props: {
         reviewId: Number,
     },
