@@ -1,6 +1,6 @@
 <template>
     <div>
-        
+        <!-- user can edit reviews about game... -->
         <div>
             <button @click="shouldShow = !shouldShow">
                 <i class="fas fa-pen"></i>

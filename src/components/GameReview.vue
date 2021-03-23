@@ -21,12 +21,6 @@
             </button>
         </div>
         
-
-        
-        
-        
-       
-        
     </div>
 </template>
 

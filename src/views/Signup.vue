@@ -1,36 +1,47 @@
 <template>
   <div class="container">
-    
-    <div id="text">
-      <h1>sign up</h1>
-    </div>
-    <div class="details">
-      <p>Username</p>
-      <input type="text" id="username-input" v-model="username" />
-      <p>Email</p>
-      <input
-        type="text"
-        id="email-input"
-        v-model="email"
-        class="starndard-input"
-      />
-      <p>Password</p>
-      <input type="password" id="password-input" v-model="password" />
-      <p>Bio</p>
-      <input type="text" id="bio-input" v-model="bio" />
-      <p>birthdate</p>
-      <input
-        type="date"
-        id="birthdate-input"
-        v-model="birthdate"
-        placeholder="yyyy-mm-dd"
-      />
-      <br />
-    </div>
-    <button @click="signupUser" class="button is-info">Sign up</button>
-
-    <p>Already have an Account?</p>
-    <button @click="signin" class="button is-info">Sign in</button>
+    <!-- sign up form... -->
+    <section>
+      <div class="box">
+        <div class="form">
+          <h2>Sign Up</h2>
+          <form>
+            <div class="inputBx">
+              <input type="text" placeholder="Username" v-model="username" />
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="inputBx">
+              <input
+              type="text"
+              placeholder="E-mail"
+              v-model="email"
+              />
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="inputBx">
+              <input type="password" placeholder="Password" v-model="password" />
+              <i class="fas fa-lock"></i>
+            </div>
+            <div class="inputBx">
+              <input type="text" placeholder="Bio" v-model="bio" />
+              <i class="fas fa-book"></i>
+            </div>
+            <div class="inputBx">
+              <input
+                type="date"
+                v-model="birthdate"
+                placeholder="yyyy-mm-dd"
+              />
+              <i class="fas fa-birthday-cake"></i>
+            </div>
+            <div class="inputBx">
+              <input @click="signupUser" type="submit" value="Sign Up"/>
+            </div>
+          </form>
+          <p>Already Have An Account? <a href="#" @click="signin">Sign In</a></p>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -84,22 +95,5 @@ export default {
 </script>
 
 <style lang="scss">
-#img {
-  margin-top: 1rem;
-}
-#text {
-  p {
-    font-size: 1.5rem;
-  }
-}
-.details p {
-  margin-bottom: 0;
-}
-input {
-  margin-bottom: 1rem;
-  width: 60%;
-}
-button {
-  margin-bottom: 1rem;
-}
+
 </style>

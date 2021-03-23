@@ -1,8 +1,14 @@
 <template>
     <div>
-        <h1>game</h1>
-         <overview />
-         <upgrades />
+        <div class="home">
+            <button @click="home">Back to Home</button>
+        </div>
+        <div class="rate">
+            <button @click="rate">Rate this Game</button>
+        </div>
+
+        <overview />
+        <upgrades />
     </div>
 </template>
 
@@ -29,7 +35,13 @@ export default {
             if (this.$store.getters.bytesUntilLevelUp <= 0){
                 this.$store.commit('levelUp');
             }
-        }
+        },
+        home(){
+            this.$router.push("/feed")
+        },
+        rate(){
+            this.$router.push("/rate");
+        },
     },
     created(){
         this.loop();
@@ -42,5 +54,19 @@ export default {
 </script>
 
 <style scoped>
+.home{
+    position: absolute;
+    font-size: 20px;
+    font-weight: 300;
+    top: 17px;
+    left: 17px;
+}
+.rate{
+    position: absolute;
+    font-size: 20px;
+    font-weight: 300;
+    top: 17px;
+    right: 17px;
+}
 
 </style>

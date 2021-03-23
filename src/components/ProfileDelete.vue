@@ -1,6 +1,11 @@
 <template>
   <div>
+    <!-- user can delete their profile.... -->
     <div>
+       <button @click="shouldShow = !shouldShow">
+        <i class="fas fa-user-minus"></i>
+      </button>
+    <div v-if="shouldShow">
       <h3>{{ deleteStatus }}</h3>
       <div class="delete-container">
         <h4>Delete Profile</h4>
@@ -10,6 +15,7 @@
           <i class="fas fa-user-times"></i>Delete
         </button>
       </div>
+    </div>
     </div>
   </div>
 </template>
@@ -26,6 +32,7 @@ export default {
       username: "",
       password: "",
       deleteStatus: "",
+      shouldShow: false
     };
   },
   methods: {
@@ -49,6 +56,7 @@ export default {
           this.$router.push("/");
           cookies.delete("session");
           cookies.delete("userId");
+          this.shouldShow = false;
         })
         .catch((error) => {
           console.log(error);
@@ -60,4 +68,10 @@ export default {
 </script>
 
 <style scoped>
+button{
+  height: 50px;
+  width: 50px;
+  margin: 1rem;
+}
+
 </style>

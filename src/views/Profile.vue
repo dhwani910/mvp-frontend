@@ -1,28 +1,35 @@
 <template>
     <div>
-        <h1>profile</h1>
-         <signout-button></signout-button>
-         <button @click="home">Back to Home</button>
-         <profile-edit></profile-edit>
-         <profile-delete></profile-delete>
+      <!-- You can get details of users.... -->
+      <div class="heading">
+        <h1>Profile</h1>
+      </div>
+      <div class="signout">
+        <signout-button></signout-button>
+      </div>
+      <div class="home">
+        <button @click="home">Back to Home</button>
+      </div>
+        <profile-edit></profile-edit>
+        <profile-delete></profile-delete>
           <div class="user-profile">
-               <button @click="getUser">View Profile</button>
-              <div>
-                <p>{{ user.username }}</p>
+            <button @click="getUser">View Profile</button>
+            <div>
+              <p>{{ user.username }}</p>
+              <p>{{ user.email }}</p>
+              <p>{{ user.bio }}</p>
+              <p>{{ user.birthdate }}</p>
+            </div>
+          </div>
+          <div class="users-profile">
+            <button @click="getUsers">View Other People Profile</button>
+              <div v-for="user in users" :key="user.userId">
+                <h3>{{ user.username }}</h3>
                 <p>{{ user.email }}</p>
                 <p>{{ user.bio }}</p>
                 <p>{{ user.birthdate }}</p>
-              </div>
-          </div>
-          <div class="users-profile">
-                <button @click="getUsers">View Other People Profile</button>
-                  <div v-for="user in users" :key="user.userId">
-                     <h3>{{ user.username }}</h3>
-                     <p>{{ user.email }}</p>
-                     <p>{{ user.bio }}</p>
-                     <p>{{ user.birthdate }}</p>
         
-                  </div>
+              </div>
           </div>
     </div>
 </template>
@@ -87,13 +94,38 @@ export default {
           console.log(error);
         });
     },
-        home(){
-            this.$router.push("/feed")
-        }
-    },
+    home(){
+      this.$router.push("/feed")
+    }
+  }
 }
 </script>
 
 <style scoped>
+.signout{
+  position: absolute;
+  font-size: 20px;
+  font-weight: 300;
+  top: 17px;
+  right: 17px;
+}
+.home{
+  position: absolute;
+  font-size: 20px;
+  font-weight: 300;
+  top: 17px;
+  left: 17px;
+}
+/* .heading{
+  position: relative;
+  background-color: black;
+  color: white;
+  max-width: 530px;
+  text-align: center;
+} */
+
+
+
+
 
 </style>

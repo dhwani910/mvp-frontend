@@ -2,19 +2,31 @@
 
 
 <template>
+    <!-- login form.. -->
+
   <div class="container">
-    
-    <div class="details">
-      <p>Email</p>
-      <input type="text" id="email-input" v-model="email" />
-      <p>Password</p>
-      <input type="password" id="password-input" v-model="password" /><br />
-    </div>
-    <button @click="loginUser" class="button is-info">Login</button>
-    <h5 id="login-status">{{ loginStatus }}</h5>
-    <p>Not a Member? sign up</p>
-    <button class="button is-info" @click="signup">Sign Up</button>
-     
+    <section>
+      <div class="box">
+        <div class="form">
+          <h2>Login</h2>
+          <form>
+            <div class="inputBx">
+              <input type="text" placeholder="E-mail" v-model="email" />
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="inputBx">
+              <input type="password" placeholder="password" v-model="password" />
+              <i class="fas fa-lock"></i>
+            </div>
+            <div class="inputBx">
+              <input @click="loginUser" type="submit" value="login"/>
+              <h5 id="login-status">{{ loginStatus }}</h5>
+            </div>
+          </form>
+          <p>Not a Member? <a href="#" @click="signup">Sign up</a></p>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -66,22 +78,110 @@ export default {
 </script>
 
 <style lang="scss">
-#img {
-  margin-top: 1rem;
+@import url('https://fonts.googleapis.com/css2?family=Della+Respira&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Della', sans-serif;
 }
-#text {
-  p {
-    font-size: 1.5rem;
-  }
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(-30deg, #03a9f4 0%, #3a78b7 50%, #262626 50%, #607d8b 100%);
+    filter: hue-rotate(120deg);
+    animation: animate 10s linear infinite;
 }
-.details p {
-  margin-bottom: 0;
+@keyframes animate{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
 }
-input {
-  margin-bottom: 1rem;
-  width: 60%;
+.box{
+    position: relative;
+    padding: 50px;
+    width: 360px;
+    height: 530px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 6px;
+    box-shadow: 0 5px 35px rgba(0,0,0,0.2);
 }
-button {
-  margin-bottom: 1rem;
+.box::after{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 5px;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 15%, transparent 85%, rgba(255,255,255,0.3) 100%);
 }
+.box .form{
+    position: relative;
+    width: 100%;
+}
+.box .form h2{
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+.box .form .inputBx{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.box .form .inputBx input{
+    width: 100%;
+    outline: none;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: transparent;
+    padding: 8px 10px;
+    padding-left: 35px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    box-shadow: inset 0 0 25px rgba(0,0,0,0.2);
+}
+.box .form .inputBx input::placeholder{
+    color: #fff;
+}
+.box .form .inputBx input[type="submit"]{
+    background: #fff;
+    color: #111;
+    max-width: 100px;
+    padding: 8px 10px;
+    box-shadow: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.box .form .inputBx i{
+    position: absolute;
+    top: 14px;
+    left: 10px;
+    transform: scale(0.7);
+    filter: invert(1);
+
+}
+.box .form p{
+    color: #fff;
+    font-weight: 300;
+    font-size: 15px;
+    margin-top: 5px;
+}
+.box .form a{
+    color: #fff;
+}
+
 </style>

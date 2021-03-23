@@ -1,4 +1,5 @@
 <template>
+<!-- user can like or unlike game and can see other's like.... -->
     <div class="like-container">
         <button @click="likeGame()" v-if="isLiked == false">
             <i class="fas fa-thumbs-up"></i>

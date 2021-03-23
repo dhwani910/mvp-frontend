@@ -1,4 +1,5 @@
 <template>
+<!-- sign out... -->
   <button type="button" class="button is-danger" @click="logout">
     Sign Out
   </button>

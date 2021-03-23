@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!-- user can delete review about game... -->
         <button @click="reviewDelete">
             <i class="fas fa-trash-alt"></i>
         </button>
