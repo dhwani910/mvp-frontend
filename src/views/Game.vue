@@ -1,10 +1,10 @@
 <template>
     <div>
         <div class="home">
-            <button @click="home">Back to Home</button>
+            <button class="button is-primary" @click="home">Back to Home</button>
         </div>
         <div class="rate">
-            <button @click="rate">Rate this Game</button>
+            <button class="button is-primary" @click="rate">Rate this Game</button>
         </div>
 
         <overview />

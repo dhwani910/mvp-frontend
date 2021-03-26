@@ -1,11 +1,11 @@
 <template>
     <div>
         <div class="home">
-            <button @click="home">Back to Home</button>
+            <button class="button is-primary" @click="home">Back to Home</button>
         </div>
-        <h1>Reviews Of Type Master</h1>
+        <h1 class="title is-1">Reviews Of Type Master</h1>
         <!-- // Game Likes and Game Review Import...... -->
-        <div class="like">
+        <div>
             <game-likes :gameId="1"></game-likes>
         </div>
         <game-review :gameId="1"></game-review>
@@ -37,5 +37,6 @@ export default {
     top: 17px;
     left: 17px;
 }
+
 
 </style>

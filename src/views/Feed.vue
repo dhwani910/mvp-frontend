@@ -11,7 +11,7 @@
       
       <div class="right">
         <div class="profile">
-            <button @click="profile">
+            <button class="button is-primary" @click="profile">
                 User Profile
                <!-- <i class="fal fa-user"></i> -->
             </button>
@@ -21,7 +21,7 @@
         </div>
         
         <div class="game">
-            <button @click="game">Play Game</button>
+            <button class="button is-primary" @click="game">Play Game</button>
         </div>
       </div>
     </div>

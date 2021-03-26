@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <h1>game review</h1>
-        <div v-for="review in reviews" :key="review.reviewId">
+    <div >
+        <h1 class="title is-1">game review</h1>
+        <div class="notification is-success" v-for="review in reviews" :key="review.reviewId">
             <h2>{{review.username}}</h2>
             <p>{{review.content}}</p>
             <review-edit
@@ -14,10 +14,10 @@
 
             </review-delete>
         </div>
-        <div>
-            <textarea type="text" v-model="reviewContent" placeholder="What Do You Think About This Game??"></textarea>
-            <button @click="reviewCreate">
-                <i class="fas fa-check"></i>
+        <div >
+            <textarea type="text" v-model="reviewContent" placeholder="What Do You Think About This Game??"></textarea> <br>
+            <button class="button is-link is-outlined" @click="reviewCreate">
+                <i class="fas fa-upload"></i>
             </button>
         </div>
         
@@ -94,5 +94,11 @@ export default {
 </script>
 
 <style scoped>
+h1{
+    padding: 3rem;
+}
+textarea{
+    width: 300px;
+}
 
 </style>

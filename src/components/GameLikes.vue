@@ -1,13 +1,13 @@
 <template>
 <!-- user can like or unlike game and can see other's like.... -->
     <div class="like-container">
-        <button @click="likeGame()" v-if="isLiked == false">
+        <button class="button is-primary" @click="likeGame()" v-if="isLiked == false">
             <i class="fas fa-thumbs-up"></i>
         </button>
-        <button @click="unlikeGame" v-else-if="isLiked == true">
+        <button class="button is-primary" @click="unlikeGame" v-else-if="isLiked == true">
             <i class="fas fa-thumbs-down"></i>
         </button>
-        <span> Likes: {{likesAmount}}</span>
+        <span>  {{likesAmount}}</span>
         
     </div>
 </template>
@@ -101,5 +101,9 @@ export default {
 
 
 <style scoped>
+span{
+    font-weight: 700;
+    font-size: 30px;
+}
 
 </style>

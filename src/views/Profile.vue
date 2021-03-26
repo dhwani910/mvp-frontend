@@ -2,13 +2,13 @@
     <div>
       <!-- You can get details of users.... -->
       <div class="heading">
-        <h1>Profile</h1>
+        <h1 class="title is-1">Profile</h1>
       </div>
       <div class="signout">
         <signout-button></signout-button>
       </div>
       <div class="home">
-        <button @click="home">Back to Home</button>
+        <button class="button is-primary" @click="home">Back to Home</button>
       </div>
         <profile-edit></profile-edit>
         <profile-delete></profile-delete>
